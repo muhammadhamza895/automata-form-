@@ -4,8 +4,11 @@ import { useFileContext } from '../context/FIlesTypeContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { Button } from 'antd'
+import { useNavigate } from 'react-router-dom'
 
 const UploadFile = () => {
+    const navigate = useNavigate()
+
     const [selectedFile, setSelectedFile] = useState(null);
 
     const [allowedExtensionsTest, setAllowedExtensionTest] = useState([]);
@@ -60,6 +63,7 @@ const UploadFile = () => {
     const sumbutFileUpload = ()=>{
         setSelectedFile(null)
         toast.success('file submitted Successfully')
+        navigate('/')
     }
 
     return (

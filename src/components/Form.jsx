@@ -59,7 +59,7 @@ const Form = () => {
     const onSubmit = (e) => {
         e.preventDefault()
         if (!validateName(inputData?.name)) {
-            toast.error('First letter should be capital')
+            toast.error('Name first letter should be capital')
             return
         }
         if (!validatePhone(inputData?.contact)) {
@@ -72,19 +72,21 @@ const Form = () => {
         }
         if (!validatePass(inputData?.password)) {
             toast.error('Must contain _, -, alpha - numeric letters')
+            return 
         }
         if (!validateDOB(inputData?.dateOfBirth)) {
-            toast.error('Invalid DOB Format, it should be dd-mm-yyyy')
+            toast.error('Invalid DOB Format, it should be DD-MM-YYYY')
             return
         }
+        toast.success('Form submitted successfully')
         navigate('/file-upload')
     }
 
     return (
         <div className="h-[100vh] flex items-center justify-center">
             <div className="max-w-md relative flex flex-col p-4 rounded-md text-black bg-white w-[400px]">
-                <div className="text-2xl font-bold mb-2 text-[#1e0e4b] text-center">Welcome back to <span className="text-[#7747ff]">App</span></div>
-                <div className="text-sm font-normal mb-4 text-center text-[#1e0e4b]">Log in to your account</div>
+                <div className="text-2xl font-bold mb-2 text-[#1e0e4b] text-center">Welcome back to <span className="text-[#7747ff]">Portal</span></div>
+                <div className="text-sm font-normal mb-4 text-center text-[#1e0e4b]">Register your account</div>
                 <form className="flex flex-col gap-3">
                     <div className="block relative">
                         <label htmlFor="email" className="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Name</label>
@@ -111,7 +113,7 @@ const Form = () => {
                     <div className="block relative">
                         <label htmlFor="password" className="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Date Of Birth</label>
                         <input type="text" id="password" className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0"
-                            name='dateOfBirth' value={inputData?.dateOfBirth} onChange={handleChange}
+                            name='dateOfBirth' value={inputData?.dateOfBirth} onChange={handleChange} placeholder="DD-MM-YYYY"
                         />
                     </div>
                     
