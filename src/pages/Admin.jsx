@@ -31,6 +31,9 @@ const Admin = () => {
   const submitNewExtension = async () => {
     try {
       const { data } = await axios.post('http://localhost:3000/add-new-file-types', { newFileExtension })
+      if (data?.message) {
+        return toast?.error("Extension already in list")
+      }
       setOptions(data)
       setnewFileExnsion('')
       toast?.success('Extension added successfully')
