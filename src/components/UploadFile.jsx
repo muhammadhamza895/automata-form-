@@ -60,32 +60,32 @@ const UploadFile = () => {
     const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
 
-    const sumbutFileUpload = ()=>{
+    const sumbutFileUpload = () => {
         setSelectedFile(null)
         toast.success('file submitted Successfully')
         navigate('/')
     }
 
     return (
-        <div className='h-[100vh] flex flex-col items-center justify-center'>
-            <h1 className='mb-6'><span className='text-blue-300'>Acceptable types :</span> {' '}{JSON.stringify(allowedExtensionsTest)}</h1>
-            <div {...getRootProps()}>
+        <div className='h-[100vh] flex flex-col items-center justify-center bg-gradient-to-r from-[#A1C4FD] to-[#E2F3FF]'>
+            <h1 className='mb-6'><span className='text-blue-700'>Acceptable types :</span> {' '}{JSON.stringify(allowedExtensionsTest)}</h1>
+            <div {...getRootProps()} className='w-full max-w-[400px] px-2'>
                 <input {...getInputProps()} />
                 {
                     !selectedFile ?
-                        <div className='border border-black p-6 w-[500px] flex items-center justify-center rounded-md cursor-pointer
+                        <div className='border border-black p-6 w-[500px] flex items-center justify-center rounded-md cursor-pointer w-full
                         '>
                             <p>Drop the files here ...</p>
                         </div> :
-                        <div className='border border-black p-6 w-[500px] flex items-center justify-center rounded-md'>
+                        <div className='border border-black p-6 w-[500px] flex items-center justify-center rounded-md w-full'>
                             <p>{selectedFile?.name}</p>
                         </div>
                 }
             </div>
-            <Button type="primary" danger className='mt-6' disabled={!selectedFile} onClick={()=>setSelectedFile(null)}>
+            <Button type="primary" danger className='mt-6' disabled={!selectedFile} onClick={() => setSelectedFile(null)}>
                 Remove File
             </Button>
-            <Button  type="primary" className='mt-6' disabled={!selectedFile} onClick={sumbutFileUpload}>Submit</Button>
+            <Button type="primary" className='mt-6' disabled={!selectedFile} onClick={sumbutFileUpload}>Submit</Button>
         </div>
     )
 }

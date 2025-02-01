@@ -59,48 +59,40 @@ const Admin = () => {
 
 
   return (
-    <div className='flex flex-col items-center justify-center h-[100vh] gap-6 w-[300px] mx-auto'>
-      <div>
-        <h3 className='mb-2'>File Types</h3>
-        <div className='w-[300px] shrink-0'>
-          <Space
-            style={{
-              width: '100%',
-            }}
-            direction="vertical"
-          >
-            <Select
-              mode="multiple"
-              allowClear
+    <div className='bg-gradient-to-r from-[#A1C4FD] to-[#E2F3FF]'>
+      <div className='flex flex-col items-center justify-center h-[100vh] gap-6 w-full max-w-[400px] mx-auto'>
+        <div className='w-full '>
+          <h3 className='mb-2'>File Types</h3>
+          <div className='shrink-0'>
+            <Space
               style={{
                 width: '100%',
               }}
-              placeholder="Please select"
-              defaultValue={files}
-              onChange={handleAcceptedFileTypes}
-              options={options}
-              value={files}
-            />
-            {/* <Select
-            mode="multiple"
-            disabled
-            style={{
-              width: '100%',
-            }}
-            placeholder="Please select"
-            defaultValue={['a10', 'c12']}
-            onChange={handleChange}
-            options={options}
-          /> */}
-          </Space>
+              direction="vertical"
+            >
+              <Select
+                mode="multiple"
+                allowClear
+                style={{
+                  width: '100%',
+                }}
+                placeholder="Please select"
+                defaultValue={files}
+                onChange={handleAcceptedFileTypes}
+                options={options}
+                value={files}
+              />
+            </Space>
+          </div>
+        </div>
+        <div className='w-[100%] border border-black p-4 rounded-lg'>
+          <h3 className='mb-2'>New Type</h3>
+          <Input value={newFileExtension} onChange={handleInputChange} placeholder="Basic usage" className='mb-2 rounded-md bg-[#F3F9FF] border border-[#D1E4F8]' />
+          <Button type="primary" onClick={submitNewExtension} disabled={!newFileExtension}>Submit</Button>
         </div>
       </div>
-      <div className='w-[100%] border border-black p-4 rounded-lg'>
-        <h3 className='mb-2'>New Type</h3>
-        <Input value={newFileExtension} onChange={handleInputChange} placeholder="Basic usage" className='mb-2' />
-        <Button type="primary" onClick={submitNewExtension}>Submit</Button>
-      </div>
     </div>
+
   )
 }
 

@@ -83,28 +83,28 @@ const Form = () => {
     }
 
     return (
-        <div className="h-[100vh] flex items-center justify-center">
-            <div className="max-w-md relative flex flex-col p-4 rounded-md text-black bg-white w-[400px]">
-                <div className="text-2xl font-bold mb-2 text-[#1e0e4b] text-center">Welcome back to <span className="text-[#7747ff]">Portal</span></div>
+        <div className="min-h-[100vh] px-2 py-10 lg:py-0 flex items-center justify-center bg-gradient-to-r from-[#A1C4FD] to-[#E2F3FF]">
+            <div className="max-w-md relative flex flex-col p-4 rounded-md text-black bg-white w-[400px] bg-opacity-50 backdrop-blur-[6.3px] border border-white border-opacity-30">
+                <div className="text-2xl font-bold mb-2 text-[#1e0e4b] text-center">Welcome to <span className="text-[#7747ff]">Portal</span></div>
                 <div className="text-sm font-normal mb-4 text-center text-[#1e0e4b]">Register your account</div>
                 <form className="flex flex-col gap-3">
                     <div className="block relative">
                         <label htmlFor="email" className="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Name</label>
-                        <input type="text" id="email" className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" name='name' value={inputData?.name} onChange={handleChange} />
+                        <input type="text" id="email" className="rounded-md bg-[#F3F9FF] border border-[#D1E4F8] text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:outline-none ring-offset-2 ring-gray-900 outline-0" name='name' value={inputData?.name} onChange={handleChange} />
 
                     </div>
                     <div className="block relative">
                         <label htmlFor="password" className="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Contact</label>
-                        <input placeholder="03XXXXXXXXX" type="text" id="password" className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0" name='contact' value={inputData?.contact} onChange={handleChange} />
+                        <input placeholder="03XXXXXXXXX" type="text" id="password" className="rounded-md bg-[#F3F9FF] border border-[#D1E4F8] text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:outline-none ring-offset-2 ring-gray-900 outline-0" name='contact' value={inputData?.contact} onChange={handleChange} />
                     </div>
                     <div className="block relative">
                         <label htmlFor="email" className="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Email</label>
-                        <input type="text" id="email" className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2  ring-gray-900 outline-0" name='email' value={inputData?.email} onChange={handleChange} />
+                        <input type="text" id="email" className="rounded-md bg-[#F3F9FF] border border-[#D1E4F8] text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:outline-none ring-offset-2 ring-gray-900 outline-0" name='email' value={inputData?.email} onChange={handleChange} />
                     </div>
 
                     <div className="block relative">
                         <label htmlFor="password" className="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Password</label>
-                        <input type="password" id="password" className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0"
+                        <input type="password" id="password" className="rounded-md bg-[#F3F9FF] border border-[#D1E4F8] text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:outline-none ring-offset-2 ring-gray-900 outline-0"
                             name='password' value={inputData?.password} onChange={handleChange}
                         />
                     </div>
@@ -112,12 +112,12 @@ const Form = () => {
 
                     <div className="block relative">
                         <label htmlFor="password" className="block text-gray-600 cursor-text text-sm leading-[140%] font-normal mb-2">Date Of Birth</label>
-                        <input type="text" id="password" className="rounded border border-gray-200 text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:ring-2 ring-offset-2 ring-gray-900 outline-0"
+                        <input type="text" id="password" className="rounded-md bg-[#F3F9FF] border border-[#D1E4F8] text-sm w-full font-normal leading-[18px] text-black tracking-[0px] appearance-none block h-11 m-0 p-[11px] focus:outline-none ring-offset-2 ring-gray-900 outline-0"
                             name='dateOfBirth' value={inputData?.dateOfBirth} onChange={handleChange} placeholder="DD-MM-YYYY"
                         />
                     </div>
                     
-                    <button type="submit" className="bg-[#7747ff] w-max m-auto px-6 py-2 rounded text-white text-sm font-normal" onClick={(e) => onSubmit(e)}>Submit</button>
+                    <button type="submit" className="bg-[#4E6EF2] hover:bg-[#3A58D8] w-max m-auto px-6 py-2 rounded text-white text-sm font-normal" onClick={(e) => onSubmit(e)}>Submit</button>
 
                 </form>
             </div>
